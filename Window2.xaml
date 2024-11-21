@@ -1,0 +1,39 @@
+﻿<Window x:Class="wiazanie_Danych.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wiazanie_Danych"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+    <UniformGrid Rows="1">
+        <Rectangle
+            Width="{Binding
+            ElementName=szerokoscSlider,
+            Path=Value}"
+            Height="{Binding
+            ElementName=wyskoscTextbox,
+            Path=Text}"
+            Fill="{Binding
+            ElementName=kolorComboBox,
+            Path=Text}"
+            />
+        <StackPanel>
+            <TextBlock Margin="20">Szerokosc</TextBlock>
+            <Slider Minimum="20"
+                    Maximum="400"
+                    Value="20"
+                    x:Name="szerokoscSlider"
+                    Margin="20"
+                    />
+            <TextBlock Margin="20">Wysokosc</TextBlock>
+            <TextBox x:Name="wyskoscTextbox" Margin="20"></TextBox>
+            <ComboBox SelectedIndex="2" x:Name="kolorComboBox" Margin="20">
+            <ComboBoxItem>Red</ComboBoxItem>
+            <ComboBoxItem>Green</ComboBoxItem>
+            <ComboBoxItem>Blue</ComboBoxItem>
+            </ComboBox>
+            <Button Click="Button_Click">Oblicz pole prostokata</Button>
+        </StackPanel>
+    </UniformGrid>
+</Window>
